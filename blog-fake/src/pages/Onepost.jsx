@@ -2,6 +2,7 @@ import React from 'react';
 import Card from 'react-bootstrap/Card';
 import { useParams } from 'react-router-dom'
 import { useState, useEffect } from "react";
+import Comments from '../components/Comments'
 
 export default function App() {
     const { id } = useParams()
@@ -46,7 +47,9 @@ export default function App() {
 
                 </Card.Body>
             </Card>
+        <h2>Liste des commentaires</h2>
 
+           <Comments idUser={data.id}/>
 
         </div>
     );
