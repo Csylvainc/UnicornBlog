@@ -1,18 +1,16 @@
 import React from 'react';
-import CardPhoto from '../components/CardPhoto'
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-
+import Card from 'react-bootstrap/Card';
+import { useParams } from 'react-router-dom'
 import { useState, useEffect } from "react";
 
-export default function Gallery() {
-    const [data, setData] = useState(null);
+export default function App() {
+    const { id } = useParams()
+    const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        fetch(`https://jsonplaceholder.typicode.com/albums/1/photos`)
+        fetch(`https://jsonplaceholder.typicode.com/posts/` + id)
             .then((response) => {
                 if (!response.ok) {
                     throw new Error(
@@ -37,21 +35,22 @@ export default function Gallery() {
     return (
         <div className="container">
             <h1>Liste des Articles</h1>
-            {loading && <div>A moment please...</div>}
-            {error && (
-                <div>{`There is a problem fetching the post data - ${error}`}</div>
-            )}
-            <row>
+         
+            <Card className="m-3">
 
-                {data &&
-                    data.map(({ id, title, thumbnailUrl }) => (
-                        <CardPhoto title={title} id={id} url={thumbnailUrl}/>
-                    ))}
+                <Card.Body>
+                    <Card.Title>Post numero {id}</Card.Title>
+                    <Card.Text>
+                        {data.body}
+                    </Card.Text>
 
-
-            </row>
+                </Card.Body>
+            </Card>
 
 
         </div>
     );
 }
+
+
+

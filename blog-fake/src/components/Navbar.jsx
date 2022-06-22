@@ -5,14 +5,17 @@ import { LinkContainer } from 'react-router-bootstrap'
 import {
   Routes,
   Route,
+  useParams,
 } from "react-router-dom";
 
 import Home from '../pages/Home'
 import Gallery from '../pages/Gallery'
 import Upload from '../pages/Upload'
+import Onepost from '../pages/Onepost'
 
 
 function MyNavbar() {
+
   return (
     <div>
       <Navbar bg="dark" variant="dark">
@@ -36,7 +39,7 @@ function MyNavbar() {
     <Route path="/" element={<Home />} />
     <Route path="/Gallery" element={<Gallery />} />
     <Route path="/Upload" element={<Upload />} />
-    {/* <Route path="/:id" element={<Post />} /> */}
+    <Route path="/Onepost/:id" element={<Onepost />} />
   </Routes>
   </div>
   );

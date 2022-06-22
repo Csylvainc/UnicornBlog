@@ -1,16 +1,20 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import { LinkContainer } from 'react-router-bootstrap'
 
-function CardPost() {
+
+function CardPost(props) {
   return (
-    <Card>
-      <Card.Header>Featured</Card.Header>
+    <Card className="m-3">
+      
       <Card.Body>
-        <Card.Title>Special title treatment</Card.Title>
+        <Card.Title>{props.title}</Card.Title>
         <Card.Text>
-          With supporting text below as a natural lead-in to additional content.
+          {props.body.substring(0,30)}
         </Card.Text>
+        <LinkContainer to={"/Onepost/" + props.id}>
         <Button variant="primary">Lire la suite</Button>
+        </LinkContainer>
       </Card.Body>
     </Card>
   );
