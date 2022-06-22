@@ -44,9 +44,9 @@ function Comments(props) {
                     <Card className="m-3">
 
                         <Card.Body>
-                            <Card.Title>Titre du commentaire <br />{name} {id}</Card.Title>
+                            <Card.Title>Nom :{name} <br /> {id}</Card.Title>
                             <Card.Text>
-                                {email}<br />{body}
+                                Email : {email}<br />{body}
                             </Card.Text>
 
                         </Card.Body>

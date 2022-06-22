@@ -36,7 +36,7 @@ export default function App() {
     return (
         <div className="container">
             <h1>Liste des Articles</h1>
-         
+
             <Card className="m-3">
 
                 <Card.Body>
@@ -47,9 +47,9 @@ export default function App() {
 
                 </Card.Body>
             </Card>
-        <h2>Liste des commentaires</h2>
+            <h2>Liste des commentaires</h2>
 
-           <Comments idUser={data.id}/>
+            <Comments idUser={data.id} />
 
         </div>
     );
