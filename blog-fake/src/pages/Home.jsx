@@ -1,15 +1,19 @@
 import React from 'react';
 import CardPost from '../components/CardPost'
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import Filter from '../components/Filter'
 
 import { useState, useEffect } from "react";
 
-export default function Home() {
+export default function Home(props) {
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [search, setSearch] = useState("");
+
+    const handleCallback = (childData) => {
+        setSearch(childData)
+    }
+    
 
     useEffect(() => {
         fetch(`https://jsonplaceholder.typicode.com/posts`)
@@ -36,7 +40,9 @@ export default function Home() {
 
     return (
         <div className="container">
-            <h1>Liste des Articles</h1>
+            <h1 className="m-5">Liste des Articles</h1>
+
+            <Filter parentCallback={handleCallback}/>
             {loading && <div>A moment please...</div>}
             {error && (
                 <div>{`There is a problem fetching the post data - ${error}`}</div>
@@ -44,8 +50,8 @@ export default function Home() {
            
 
                 {data &&
-                    data.map(({ id, title, body }) => (
-                        <CardPost title={title} body={body} id={id}/>
+                    data.map(({ id, title, body }) => ( title.indexOf(search) !== -1 ?
+                        <CardPost title={title} key={id} body={body} id={id}/>:null
                     ))}
 
 
