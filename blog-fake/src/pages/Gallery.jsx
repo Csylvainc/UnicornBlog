@@ -35,21 +35,23 @@ export default function Gallery() {
     }, []);
 
     return (
-        <div className="container">
+        <div>
             <h1>Liste des Articles</h1>
             {loading && <div>A moment please...</div>}
             {error && (
                 <div>{`There is a problem fetching the post data - ${error}`}</div>
             )}
-            <row>
-
+           
+                <div className="d-flex flex-wrap justify-content-center">
                 {data &&
                     data.map(({ id, title, thumbnailUrl }) => (
-                        <CardPhoto title={title} id={id} url={thumbnailUrl}/>
+                        <CardPhoto key={id} title={title} id={id} url={thumbnailUrl}/>
                     ))}
+                </div>
+               
 
 
-            </row>
+          
 
 
         </div>

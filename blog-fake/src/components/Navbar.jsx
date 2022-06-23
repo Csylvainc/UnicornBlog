@@ -5,14 +5,13 @@ import { LinkContainer } from 'react-router-bootstrap'
 import {
   Routes,
   Route,
-  useParams,
 } from "react-router-dom";
 
 import Home from '../pages/Home'
 import Gallery from '../pages/Gallery'
 import Upload from '../pages/Upload'
 import Onepost from '../pages/Onepost'
-
+import UploadModal from './UploadModal'
 
 function MyNavbar() {
 
@@ -31,15 +30,16 @@ function MyNavbar() {
             <LinkContainer to="/Upload">
             <Nav.Link>Upload</Nav.Link>
             </LinkContainer>
+            <Nav.Link className=""><UploadModal /></Nav.Link>
           </Nav>
         </Container>
       </Navbar>
     
   <Routes>
     <Route path="/" element={<Home />} />
-    <Route path="/Gallery" element={<Gallery />} />
-    <Route path="/Upload" element={<Upload />} />
-    <Route path="/Onepost/:id" element={<Onepost />} />
+      <Route path="gallery" element={<Gallery />} />
+      <Route path="upload" element={<Upload />} />
+      <Route path="Onepost/:id" element={<Onepost />} />
   </Routes>
   </div>
   );

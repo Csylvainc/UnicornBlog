@@ -7,7 +7,7 @@ function Comments(props) {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        fetch(`https://jsonplaceholder.typicode.com/posts/1/comments`)
+        fetch(`https://jsonplaceholder.typicode.com/comments`)
             .then((response) => {
                 if (!response.ok) {
                     throw new Error(
@@ -32,33 +32,24 @@ function Comments(props) {
     return (
 
         <div className="container">
-
             {loading && <div>A moment please...</div>}
             {error && (
                 <div>{`There is a problem fetching the post data - ${error}`}</div>
             )}
-
-
-            {data &&
-                data.map(({ id, name, email, body, postId }) => (postId === props.idUser ?
-                    <Card className="m-3">
-
-                        <Card.Body>
-                            <Card.Title>Nom :{name} <br /> {id}</Card.Title>
-                            <Card.Text>
-                                Email : {email}<br />{body}
-                            </Card.Text>
-
-                        </Card.Body>
-                    </Card> : null
-
-                ))}
-
-
-
-
-
-        </div>
+            <div className="d-flex flex-wrap justify-content-center">
+                {data &&
+                    data.map(({ id, name, email, body, postId }) => (postId === props.idUser ?
+                        <Card className="m-3" style={{ width: '14rem' }} key={id}>
+                            <Card.Body>
+                                <Card.Title>Nom :{name} <br /> {id}</Card.Title>
+                                <Card.Text>
+                                    Email : {email}<br />{body}
+                                </Card.Text>
+                            </Card.Body>
+                        </Card> : null
+                    ))}
+            </div>
+       </div>
 
     )
 }

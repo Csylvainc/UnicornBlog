@@ -5,10 +5,10 @@ import { LinkContainer } from 'react-router-bootstrap'
 
 function CardPost(props) {
   return (
-    <Card className="m-3">
+    <Card className="m-3 w-25">
       
       <Card.Body>
-        <Card.Title>{props.title}</Card.Title>
+        <Card.Title>{props.title.substring(0,10)}</Card.Title>
         <Card.Text>
           {props.body.substring(0,30)}
         </Card.Text>

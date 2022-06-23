@@ -31,7 +31,7 @@ export default function App() {
             .finally(() => {
                 setLoading(false);
             });
-    }, []);
+    }, [id]);
 
     return (
         <div className="container">

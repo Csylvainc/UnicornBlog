@@ -1,10 +1,6 @@
-import Button from 'react-bootstrap/Button';
+
 import Card from 'react-bootstrap/Card';
-import { LinkContainer } from 'react-router-bootstrap'
-import {
-  Routes,
-  Route,
-} from "react-router-dom";
+
 
 function CardPhoto(props) {
     return (

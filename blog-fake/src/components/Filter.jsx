@@ -1,8 +1,8 @@
 import React from 'react'
-import { useState, useEffect } from "react";
+
 
 function Filter(props) {
-    const [search, setSearch] = useState("");
+ 
 
     const toSearch = (e) => {
         props.parentCallback(e.target.search.value);
@@ -10,7 +10,6 @@ function Filter(props) {
     }
   return (
     <div>
-    <h4>Filtrer les articles</h4>
     <form onSubmit = {toSearch}>
                 <input type = "text"
                 name = "search" placeholder = "Enter Name"/>
