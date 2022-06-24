@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Formulaire from '../components/Formulaire'
 function Upload() {
   const [title, setTitle] = useState('');
@@ -38,11 +38,9 @@ function Upload() {
     <div className="m-3 p-5">
       <Formulaire myFetch={myFetch} changeTitle={changeTitle} changeArticle={changeArticle}/>
       <div className="d-flex flex-column">
-       {ok=='ok' && <div>Vous avez crée le poste : "{title}" <br/>{article}</div>}
-      </div>
-      
+       {ok==='ok' && <div>Vous avez crée le poste : "{title}" <br/>{article}</div>}
+      </div>  
     </div>
-
   );
 }
 
