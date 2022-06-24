@@ -46,7 +46,7 @@ export default function Home() {
                     <div>{`There is a problem fetching the post data - ${error}`}</div>
                 )}
                 {localStorage.getItem('title') !== '' &&
-                    <div><h1>Nouveau post</h1><br />{localStorage.getItem('title')}<br />{localStorage.getItem('article')}</div>
+                    <div><h1>Nouvel article</h1><br />{localStorage.getItem('title')}<br />{localStorage.getItem('article')}</div>
                 }
                 <div className="d-flex flex-wrap justify-content-center">
                     {data &&
