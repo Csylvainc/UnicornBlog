@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/UnicornBlog/static/css/main.743f7f1a.css",
-    "main.js": "/UnicornBlog/static/js/main.00398e2c.js",
-    "static/js/787.7684fda8.chunk.js": "/UnicornBlog/static/js/787.7684fda8.chunk.js",
-    "static/media/logo.svg": "/UnicornBlog/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
-    "index.html": "/UnicornBlog/index.html",
-    "main.743f7f1a.css.map": "/UnicornBlog/static/css/main.743f7f1a.css.map",
-    "main.00398e2c.js.map": "/UnicornBlog/static/js/main.00398e2c.js.map",
-    "787.7684fda8.chunk.js.map": "/UnicornBlog/static/js/787.7684fda8.chunk.js.map"
+    "main.css": "/static/css/main.743f7f1a.css",
+    "main.js": "/static/js/main.00398e2c.js",
+    "static/js/787.7684fda8.chunk.js": "/static/js/787.7684fda8.chunk.js",
+    "static/media/logo.svg": "/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/index.html",
+    "main.743f7f1a.css.map": "/static/css/main.743f7f1a.css.map",
+    "main.00398e2c.js.map": "/static/js/main.00398e2c.js.map",
+    "787.7684fda8.chunk.js.map": "/static/js/787.7684fda8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.743f7f1a.css",
